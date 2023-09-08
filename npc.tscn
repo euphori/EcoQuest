@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://lnp1av4pol8q"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_ttsy8"]
+[ext_resource type="Texture2D" uid="uid://hwj44vbjnk8f" path="res://assets/npc.png" id="2_gq71q"]
+[ext_resource type="PackedScene" uid="uid://cn0i8vcgsrxp" path="res://interact_ui.tscn" id="2_hkkbb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tk8cl"]
+radius = 0.344229
+height = 1.55719
+
+[sub_resource type="Animation" id="Animation_4o872"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.02159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_072sc"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.02159, 0), Vector3(0, 1.07, 0), Vector3(0, 1.099, 0), Vector3(0, 1.07, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0eqmh"]
+_data = {
+"RESET": SubResource("Animation_4o872"),
+"idle": SubResource("Animation_072sc")
+}
+
+[node name="NPC" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.132109, 0)
+collision_layer = 8
+script = ExtResource("1_ttsy8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.02159, 0)
+texture = ExtResource("2_gq71q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8815, 0)
+shape = SubResource("CapsuleShape3D_tk8cl")
+disabled = true
+
+[node name="InteractUI" parent="." instance=ExtResource("2_hkkbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158795, 1.47848, 0.249576)
+text_label = "Talk(o)"
+type = "npc"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_0eqmh")
+}
+
+[connection signal="talk" from="InteractUI" to="." method="_on_interact_ui_talk"]

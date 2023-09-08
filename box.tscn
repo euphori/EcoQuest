@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhecusqvtf732"]
+
+[ext_resource type="Script" path="res://box.gd" id="1_3a47h"]
+[ext_resource type="PackedScene" uid="uid://ctvr2jvnxied7" path="res://assets/props/Meshes/SM_Box.FBX" id="1_ph4lv"]
+[ext_resource type="Texture2D" uid="uid://dmq517emrnqs3" path="res://assets/props/Textures/T_Box_Albedo.png" id="2_ui1v1"]
+[ext_resource type="PackedScene" uid="uid://cn0i8vcgsrxp" path="res://interact_ui.tscn" id="4_nkayv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paemy"]
+albedo_texture = ExtResource("2_ui1v1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sh5d"]
+size = Vector3(1.58593, 1, 1)
+
+[node name="Box" type="CharacterBody3D"]
+script = ExtResource("1_3a47h")
+
+[node name="SM_Box" parent="." instance=ExtResource("1_ph4lv")]
+
+[node name="SM_Box_LOD0" parent="SM_Box/RootNode" index="0"]
+visible = false
+
+[node name="SM_Box_LOD1" parent="SM_Box/RootNode" index="1"]
+visible = false
+
+[node name="SM_Box_LOD2" parent="SM_Box/RootNode" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_paemy")
+
+[node name="SM_Box_LOD3" parent="SM_Box/RootNode" index="3"]
+visible = false
+
+[node name="UCX_SM_Box_LOD0" parent="SM_Box/RootNode" index="4"]
+visible = false
+
+[node name="SM_Box2" parent="." instance=ExtResource("1_ph4lv")]
+
+[node name="SM_Box_LOD0" parent="SM_Box2/RootNode" index="0"]
+visible = false
+
+[node name="SM_Box_LOD1" parent="SM_Box2/RootNode" index="1"]
+visible = false
+
+[node name="SM_Box_LOD2" parent="SM_Box2/RootNode" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_paemy")
+
+[node name="SM_Box_LOD3" parent="SM_Box2/RootNode" index="3"]
+visible = false
+
+[node name="UCX_SM_Box_LOD0" parent="SM_Box2/RootNode" index="4"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.921636, 0, 0, 0, 0.7, -0.0211406, 0.510989, 0.00100482)
+shape = SubResource("BoxShape3D_2sh5d")
+
+[node name="LeftRey" type="RayCast3D" parent="."]
+transform = Transform3D(0.646458, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.222233, 0.432276, 0.332776)
+target_position = Vector3(1, 0, 0)
+collision_mask = 2
+
+[node name="RightRay" type="RayCast3D" parent="."]
+transform = Transform3D(0.665937, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.314996, 0.412766, 0.322575)
+target_position = Vector3(-1, 0, 0)
+collision_mask = 2
+
+[node name="InteractUI" parent="." instance=ExtResource("4_nkayv")]
+visible = false
+text_label = "Move(o)"
+type = "movable"
+
+[editable path="SM_Box"]
+[editable path="SM_Box2"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://drsg8nginor6m"]
+
+[ext_resource type="Script" path="res://load.gd" id="1_pkwgg"]
+[ext_resource type="Texture2D" uid="uid://vdj6udno5yrr" path="res://assets/load.png" id="2_tre8d"]
+
+[sub_resource type="Animation" id="Animation_il200"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qe75m"]
+resource_name = "load"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2, 2, 2, 3, 4, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u58nh"]
+_data = {
+"RESET": SubResource("Animation_il200"),
+"load": SubResource("Animation_qe75m")
+}
+
+[node name="Load" type="Node2D"]
+script = ExtResource("1_pkwgg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(578, 321)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_tre8d")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../Sprite2D")
+speed_scale = 0.8
+libraries = {
+"": SubResource("AnimationLibrary_u58nh")
+}

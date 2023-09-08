@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce2xeokxuqj0e"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_bjr1a"]
+[ext_resource type="Texture2D" uid="uid://brtstpw3cfdlt" path="res://assets/Start Menu.png" id="1_wqbim"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_42rln"]
+resource_name = "menu"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yxpva"]
+specular_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_bjr1a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StartMenu" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(577.5, 324.5)
+scale = Vector2(0.15013, 0.15162)
+texture = ExtResource("1_wqbim")
+
+[node name="Start" type="TextureButton" parent="CanvasLayer"]
+offset_left = 136.0
+offset_top = 247.0
+offset_right = 260.0
+offset_bottom = 305.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_42rln")
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer"]
+offset_left = 143.0
+offset_top = 342.0
+offset_right = 307.0
+offset_bottom = 400.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_42rln")
+texture_hover = SubResource("CanvasTexture_yxpva")
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer"]
+offset_left = 134.0
+offset_top = 441.0
+offset_right = 241.0
+offset_bottom = 499.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_42rln")
+texture_hover = SubResource("CanvasTexture_yxpva")
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]

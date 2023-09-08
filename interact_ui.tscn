@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn0i8vcgsrxp"]
+
+[ext_resource type="Script" path="res://InteractUI.gd" id="1_lwrft"]
+[ext_resource type="PackedScene" uid="uid://c32dcj3n47ybp" path="res://areas/player_detection.tscn" id="2_wue52"]
+
+[sub_resource type="Animation" id="Animation_q5d0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.14668, 0.675367)]
+}
+
+[sub_resource type="Animation" id="Animation_75f6o"]
+resource_name = "bob"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.14668, 0.675367), Vector3(0, 1.31954, 0.675367), Vector3(0, 1.14668, 0.675367)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x01vy"]
+_data = {
+"RESET": SubResource("Animation_q5d0a"),
+"bob": SubResource("Animation_75f6o")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_11pyt"]
+font_names = PackedStringArray("Vintii")
+subpixel_positioning = 0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_muen8"]
+
+[node name="InteractUI" type="Node3D"]
+script = ExtResource("1_lwrft")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label3D")
+speed_scale = 0.2
+libraries = {
+"": SubResource("AnimationLibrary_x01vy")
+}
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14668, 0.675367)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "Move (o)"
+font = SubResource("SystemFont_11pyt")
+
+[node name="PlayerDetection" parent="." instance=ExtResource("2_wue52")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.34811, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection"]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, -0.478531, -0.000467807)
+shape = SubResource("SphereShape3D_muen8")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
