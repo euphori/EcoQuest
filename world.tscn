@@ -19,7 +19,7 @@ transform = Transform3D(0.99999, 0.00252725, -0.00366342, -1.95504e-08, 0.823136
 shadow_enabled = true
 
 [node name="Box" parent="." instance=ExtResource("4_vyv4q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23484, 3.64872, 0.204769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.604, 5.901, 0)
 collision_layer = 4
 collision_mask = 3
 axis_lock_linear_z = true
@@ -127,3 +127,6 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 35.3874, -0.678762, 12.626
 [editable path="Trees2"]
 [editable path="Trees3"]
 [editable path="Trees4"]
+[editable path="CharacterManager"]
+[editable path="CharacterManager/Robot"]
+[editable path="CharacterManager/Kid"]
