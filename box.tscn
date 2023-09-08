@@ -31,23 +31,6 @@ visible = false
 [node name="UCX_SM_Box_LOD0" parent="SM_Box/RootNode" index="4"]
 visible = false
 
-[node name="SM_Box2" parent="." instance=ExtResource("1_ph4lv")]
-
-[node name="SM_Box_LOD0" parent="SM_Box2/RootNode" index="0"]
-visible = false
-
-[node name="SM_Box_LOD1" parent="SM_Box2/RootNode" index="1"]
-visible = false
-
-[node name="SM_Box_LOD2" parent="SM_Box2/RootNode" index="2"]
-surface_material_override/0 = SubResource("StandardMaterial3D_paemy")
-
-[node name="SM_Box_LOD3" parent="SM_Box2/RootNode" index="3"]
-visible = false
-
-[node name="UCX_SM_Box_LOD0" parent="SM_Box2/RootNode" index="4"]
-visible = false
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.921636, 0, 0, 0, 0.7, -0.0211406, 0.510989, 0.00100482)
 shape = SubResource("BoxShape3D_2sh5d")
@@ -68,4 +51,3 @@ text_label = "Move(o)"
 type = "movable"
 
 [editable path="SM_Box"]
-[editable path="SM_Box2"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://budmwe2dse7lu"]
+[gd_scene load_steps=3 format=3 uid="uid://budmwe2dse7lu"]
 
 [ext_resource type="PackedScene" uid="uid://dbuxc270urqdk" path="res://assets/vegetation/Meshes/Mountain.fbx" id="1_w8ydn"]
-[ext_resource type="Texture2D" uid="uid://b4e62p0fm3hq0" path="res://assets/vegetation/Textures/Color Pallet.png" id="2_l6hp0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgoay"]
-albedo_texture = ExtResource("2_l6hp0")
+albedo_color = Color(0.819608, 0.603922, 0.333333, 1)
 
 [node name="Mountain" instance=ExtResource("1_w8ydn")]
 

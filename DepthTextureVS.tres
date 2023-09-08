@@ -66,6 +66,8 @@ operator = 2
 
 [resource]
 code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
 uniform sampler2D tex_vtx_2;
 
 
@@ -77,7 +79,7 @@ void vertex() {
 
 // UVFunc:6
 	vec2 n_in6p1 = vec2(0.10000, 0.10000);
-	vec2 n_out6p0 = fma(vec2(n_out7p0), n_in6p1, UV);
+	vec2 n_out6p0 = vec2(n_out7p0) * n_in6p1 + UV;
 
 
 // Texture2D:2
@@ -116,10 +118,13 @@ void fragment() {
 	vec2 n_out27p0 = SCREEN_UV;
 
 
+// Input:29
+	float n_out29p0 = 0.0;
+
 
 	vec4 n_out28p0;
 // Texture2D:28
-	n_out28p0 = texture(DEPTH_TEXTURE, n_out27p0);
+	n_out28p0 = vec4(0.0);
 
 
 // VectorDecompose:30
@@ -136,7 +141,7 @@ void fragment() {
 // Expression:33
 	n_out33p0 = 0.0;
 	{
-		vec4 view = n_out32p0 * vec4(n_out31p0, 1.0);
+		vec4 view =  * vec4(vec2(n_out31p0.xy), 1.0);
 		view.xyz /= view.w;
 		n_out33p0 = -view.z;
 	}
@@ -168,7 +173,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-432.801, -103.047)
 nodes/vertex/2/node = SubResource("VisualShaderNodeTexture_6lio0")
 nodes/vertex/2/position = Vector2(-500, -340)
 nodes/vertex/3/node = SubResource("VisualShaderNodeInput_lnmuq")
