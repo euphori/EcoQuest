@@ -26,13 +26,11 @@ func _physics_process(delta):
 	velocity.z = 0
 	if manager.robot.active:
 		if $LeftRey.is_colliding() or $RightRay.is_colliding() and can_move:
-			$CollisionShape3D.disabled = false
 			velocity.x = direction.x * SPEED
 			move_and_slide()
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
-		$CollisionShape3D.disabled = true
 		velocity = Vector3.ZERO
 		
 	

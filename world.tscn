@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3ewety6smg0e"]
+[gd_scene load_steps=14 format=3 uid="uid://3ewety6smg0e"]
 
 [ext_resource type="MeshLibrary" uid="uid://cgtsqgmoyajo7" path="res://tiles.meshlib" id="1_hsb2q"]
 [ext_resource type="Texture2D" uid="uid://2klxis8fgs" path="res://Sky_LowPoly_01_Day_a.png" id="4_c5yyc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cby6dvj337281" path="res://assets/vegetation/big_rock.tscn" id="8_e45fe"]
 [ext_resource type="PackedScene" uid="uid://btm8p45ep5cb5" path="res://character_manager.tscn" id="8_r3coy"]
 [ext_resource type="PackedScene" uid="uid://budmwe2dse7lu" path="res://assets/vegetation/mountain.tscn" id="8_sv31d"]
+[ext_resource type="PackedScene" uid="uid://b5kstxh1c20xw" path="res://WaterVFX.tscn" id="9_tpvtn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o0c8h"]
 panorama = ExtResource("4_c5yyc")
@@ -149,7 +150,11 @@ transform = Transform3D(-1.18171, 0, -0.573662, 0, 1, 0, 0.827628, 0, -0.819092,
 [node name="Big Rock 6" parent="." instance=ExtResource("8_e45fe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85909, -2.5854, 0.0564833)
 
+[node name="Water" parent="." instance=ExtResource("9_tpvtn")]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 1, 3.76824, 2.85354, 2.57516)
+
 [editable path="Trees"]
 [editable path="Trees2"]
 [editable path="Trees3"]
 [editable path="Trees4"]
+[editable path="Water"]
