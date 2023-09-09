@@ -1,0 +1,296 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1402840714134072094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8392119623876754924}
+  m_Layer: 0
+  m_Name: roof
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8392119623876754924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402840714134072094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 794518011393390955}
+  - {fileID: 5285115317973243906}
+  m_Father: {fileID: 7491235544068526590}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3269992842057191992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7491235544068526590}
+  m_Layer: 0
+  m_Name: rpgpp_av_roof_9x4x3_corner_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7491235544068526590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269992842057191992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8392119623876754924}
+  - {fileID: 8513060566007541505}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2015786009498558036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8392119623876754924}
+    m_Modifications:
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996471178003086725, guid: 78a873e4db67b484c8028bc47a9de0bf,
+        type: 3}
+      propertyPath: m_Name
+      value: rpgpp_av_roof_01_9x4x3_corner_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78a873e4db67b484c8028bc47a9de0bf, type: 3}
+--- !u!4 &794518011393390955 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1224754085100365631, guid: 78a873e4db67b484c8028bc47a9de0bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2015786009498558036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2840148586816399316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7491235544068526590}
+    m_Modifications:
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486762087710675567, guid: 8481219e2416a044dbab57da2d90ab25,
+        type: 3}
+      propertyPath: m_Name
+      value: rpgpp_av_roof_support_01_9x4x3_corner_01a
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8481219e2416a044dbab57da2d90ab25, type: 3}
+--- !u!4 &8513060566007541505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5858703094745336021, guid: 8481219e2416a044dbab57da2d90ab25,
+    type: 3}
+  m_PrefabInstance: {fileID: 2840148586816399316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9041817890468273186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8392119623876754924}
+    m_Modifications:
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569374315133738650, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_Name
+      value: rpgpp_av_roof_02_9x4x3_corner_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569374315133738650, guid: 69e760e026036c640b4f7766d64b10c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69e760e026036c640b4f7766d64b10c4, type: 3}
+--- !u!4 &5285115317973243906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3756702574668366880, guid: 69e760e026036c640b4f7766d64b10c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9041817890468273186}
+  m_PrefabAsset: {fileID: 0}

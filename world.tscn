@@ -102,7 +102,7 @@ transform = Transform3D(7.484, 0, 0, 0, 11.464, 0, 0, 0, 5.566, 0.449022, 0.5940
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 26.1556, -1.19878, 52.8729)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.929603, 0.368563, 0, -0.368563, 0.929603, -1.61256, 121.238, 111.885)
+transform = Transform3D(0.332248, 0.943184, -0.00380717, 0.398437, -0.136693, 0.906952, 0.854903, -0.30285, -0.421216, -12.4084, 3.98472, -1.90735e-06)
 shadow_enabled = true
 
 [node name="Tree 5" type="MeshInstance3D" parent="."]
@@ -136,35 +136,38 @@ path_to_player = NodePath("../CharacterManager/Kid")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
 
-[node name="Test" type="Sprite2D" parent="Control/CanvasLayer"]
-position = Vector2(583, 470)
+[node name="Test" type="Sprite2D" parent="Control"]
+position = Vector2(604, 609)
 texture = ExtResource("10_r4rmu")
 
-[node name="Whitetranspa1" type="Sprite2D" parent="Control/CanvasLayer"]
-position = Vector2(224, 576)
+[node name="Whitetranspa1" type="Sprite2D" parent="Control"]
+position = Vector2(224, 483)
 texture = ExtResource("10_c8s3h")
 
-[node name="Start" type="TextureButton" parent="Control/CanvasLayer"]
-offset_left = 1383.0
-offset_top = 388.0
-offset_right = 1671.0
-offset_bottom = 437.0
+[node name="Start" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1388.0
+offset_top = 495.0
+offset_right = 1676.0
+offset_bottom = 544.0
 texture_normal = ExtResource("12_g2vro")
 stretch_mode = 0
 
-[node name="Options" type="TextureButton" parent="Control/CanvasLayer"]
-offset_left = 1386.0
-offset_top = 485.0
-offset_right = 1674.0
-offset_bottom = 546.0
+[node name="Options" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 592.0
+offset_right = 1679.0
+offset_bottom = 653.0
 texture_normal = ExtResource("13_kx02x")
 stretch_mode = 0
 
-[node name="Quit" type="TextureButton" parent="Control/CanvasLayer"]
-offset_left = 1382.0
-offset_top = 573.0
-offset_right = 1670.0
-offset_bottom = 622.0
+[node name="Quit" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1387.0
+offset_top = 680.0
+offset_right = 1675.0
+offset_bottom = 729.0
 texture_normal = ExtResource("14_l3b0d")
 stretch_mode = 0
 
@@ -173,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999961, -0.00879631, 0, 0.00879631, 0.9999
 attributes = SubResource("CameraAttributesPractical_pkxoa")
 current = true
 
-[connection signal="pressed" from="Control/CanvasLayer/Start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
 
 [editable path="Box"]
 [editable path="Box/SM_Box"]
