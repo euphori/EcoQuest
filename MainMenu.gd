@@ -16,6 +16,15 @@ func _process(delta):
 	pass
 
 
+func _input(event):
+	if event.is_action("escape"):
+		self.visible = true
+
+
 func _on_start_pressed():
 	player.camera.current = true
-	self.queue_free()
+	self.visible = false
+
+
+func _on_quit_pressed():
+	get_tree().quit()

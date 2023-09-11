@@ -8,22 +8,9 @@
 script = ExtResource("1_8ccse")
 
 [node name="Robot" parent="." instance=ExtResource("1_8ufje")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.36792, 0, 0)
-
-[node name="Sprite3D" parent="Robot" index="1"]
-alpha_cut = 2
-
-[node name="Camera3D" parent="Robot" index="2"]
-transform = Transform3D(2, 0, 0, 0, 1.99992, -0.0175926, 0, 0.0175926, 1.99992, 0, 4.97163, 12.4785)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.36792, 0, 0)
+path_to_other = NodePath("../Kid")
 
 [node name="Kid" parent="." instance=ExtResource("2_ui3bc")]
 default_char = true
-
-[node name="Sprite3D" parent="Kid" index="1"]
-alpha_cut = 2
-
-[node name="Camera3D" parent="Kid" index="2"]
-transform = Transform3D(2, 0, 0, 0, 1.99992, -0.0175926, 0, 0.0175926, 1.99992, 0, 4.97163, 12.4785)
-
-[editable path="Robot"]
-[editable path="Kid"]
+path_to_other = NodePath("../Robot")

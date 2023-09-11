@@ -71,7 +71,6 @@ dof_blur_far_enabled = true
 [node name="World" type="Node3D"]
 
 [node name="FPS" parent="." instance=ExtResource("10_6f60o")]
-visible = false
 offset_right = 453.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
@@ -99,7 +98,7 @@ transform = Transform3D(0.28726, 0, -0.957852, 0, 1, 0, 0.957852, 0, 0.28726, 53
 transform = Transform3D(7.484, 0, 0, 0, 11.464, 0, 0, 0, 5.566, 0.449022, 0.594084, 6.06128)
 
 [node name="Water" parent="." instance=ExtResource("9_tpvtn")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 26.1556, -1.19878, 52.8729)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 28.9025, -1.19878, 18.7037)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.332248, 0.943184, -0.00380717, 0.398437, -0.136693, 0.906952, 0.854903, -0.30285, -0.421216, -12.4084, 3.98472, -1.90735e-06)
@@ -177,6 +176,7 @@ attributes = SubResource("CameraAttributesPractical_pkxoa")
 current = true
 
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control" method="_on_quit_pressed"]
 
 [editable path="Box"]
 [editable path="Box/SM_Box"]
