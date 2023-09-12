@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3ewety6smg0e"]
+[gd_scene load_steps=18 format=3 uid="uid://3ewety6smg0e"]
 
 [ext_resource type="PackedScene" uid="uid://dhecusqvtf732" path="res://box.tscn" id="4_vyv4q"]
 [ext_resource type="Texture2D" uid="uid://c6esjyccp6gcf" path="res://assets/vegetation/Textures/Pine Tree Branch.png" id="7_dc058"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b5kstxh1c20xw" path="res://WaterVFX.tscn" id="9_tpvtn"]
 [ext_resource type="PackedScene" uid="uid://d2u8j4ovg0kgp" path="res://assets/EmaceArt - raft on the desert/Meshes/EA04_Env_Plants_Grass_Dry_01a.fbx" id="9_wd7ck"]
 [ext_resource type="PackedScene" uid="uid://cl2c8u05w3jur" path="res://fps.tscn" id="10_6f60o"]
+[ext_resource type="PackedScene" uid="uid://dxtbo5c2lal36" path="res://assets/RPGPP_AV/Models/Structures/rpgpp_av_floor_01e_3x3.fbx" id="10_uyx3s"]
+[ext_resource type="PackedScene" uid="uid://b554j8ln3kt02" path="res://assets/RPGPP_AV/Models/Structures/rpgpp_av_window_01d.fbx" id="11_ii26e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybqtb"]
 resource_name = "Color Pallet"
@@ -115,6 +117,15 @@ visible = false
 
 [node name="EA04_Env_Plants_Grass_Dry_01a_LOD0" parent="EA04_Env_Plants_Grass_Dry_01a/RootNode" index="2"]
 visible = false
+
+[node name="rpgpp_av_floor_01e_3x3" parent="." instance=ExtResource("10_uyx3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6718, 1.64451, 7.3113)
+
+[node name="rpgpp_av_floor_01e_3x4" parent="." instance=ExtResource("10_uyx3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4772, 6.0477, 0.36365)
+
+[node name="rpgpp_av_window_01d" parent="." instance=ExtResource("11_ii26e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2608, 3.10589, -3.01597)
 
 [editable path="Box"]
 [editable path="Box/SM_Box"]
