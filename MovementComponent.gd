@@ -40,10 +40,12 @@ func _physics_process(delta):
 	
 
 	
-	if Input.is_action_just_pressed("attack") and active and not attacking:
-			$Sprite3D.frame = 0
+	if Input.is_action_just_pressed("attack") and active and !attacking:
+		if $AnimationPlayer.has_animation("attack"):
 			$AnimationPlayer.play("attack")
-			attacking = true
+			await $AnimationPlayer.animation_finished
+
+		
 
 
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !busy and active:
@@ -56,20 +58,22 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction.x and active and !attacking:
+	if direction.x and active and can_move:
 		if is_on_floor():
 			jumping = false
 		velocity.x = direction.x * SPEED
 		if !jumping and !busy:
 			$AnimationPlayer.play("run")
 		if velocity.x  < 0 and !busy :
+			$HitDetection.scale.x = -$HitDetection.scale.x
 			$Sprite3D.flip_h = true
 		elif velocity.x  > 0 and !busy :
+			$HitDetection.scale.x = -$HitDetection.scale.x
 			$Sprite3D.flip_h = false
-	elif direction.x == 0 and active:
-		if !jumping and !busy and !attacking:
-						$AnimationPlayer.play("idle")
-						velocity.x = move_toward(velocity.x, 0, SPEED)
+	elif direction.x == 0 and active and !attacking:
+		if !jumping and !busy:
+			$AnimationPlayer.play("idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if !active:
 		var destination = self.global_position.direction_to(other_player.global_position)
@@ -88,13 +92,17 @@ func _physics_process(delta):
 		
 		if velocity.x < 0:
 			$Sprite3D.flip_h = true
+			$HitDetection.scale.x = -$HitDetection.scale.x
 		elif velocity.x > 0:
 			$Sprite3D.flip_h = false
+			$HitDetection.scale.x = -$HitDetection.scale.x
 		
 
 
 	if can_move:
 		move_and_slide()
+		
+
 
 
 

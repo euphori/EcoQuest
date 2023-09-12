@@ -1,48 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce2xeokxuqj0e"]
+[gd_scene load_steps=7 format=3 uid="uid://ce2xeokxuqj0e"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_bjr1a"]
-[ext_resource type="Texture2D" uid="uid://brtstpw3cfdlt" path="res://assets/Start Menu.png" id="1_wqbim"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_jhss4"]
+[ext_resource type="Texture2D" uid="uid://dlbr3i7ir80hc" path="res://UI/Test.png" id="2_w0bep"]
+[ext_resource type="Texture2D" uid="uid://cchdvhacelg1i" path="res://UI/whitetranspa 1.png" id="3_gxecb"]
+[ext_resource type="Texture2D" uid="uid://nsscxjnyy2aa" path="res://UI/Start Game.png" id="4_see5d"]
+[ext_resource type="Texture2D" uid="uid://pie88dpn2ckp" path="res://UI/Options.png" id="5_t5vlv"]
+[ext_resource type="Texture2D" uid="uid://dd5x5ars36vme" path="res://UI/Quit Game.png" id="6_fd3tg"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_42rln"]
-resource_name = "menu"
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_yxpva"]
-specular_color = Color(0, 0, 0, 1)
-
-[node name="Menu" type="Node2D"]
-script = ExtResource("1_bjr1a")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jhss4")
+path_to_player = NodePath("../CharacterManager/Kid")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StartMenu" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(577.5, 324.5)
-scale = Vector2(0.15013, 0.15162)
-texture = ExtResource("1_wqbim")
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(604, 609)
+texture = ExtResource("2_w0bep")
 
-[node name="Start" type="TextureButton" parent="CanvasLayer"]
-offset_left = 136.0
-offset_top = 247.0
-offset_right = 260.0
-offset_bottom = 305.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_42rln")
+[node name="Whitetranspa1" type="Sprite2D" parent="."]
+position = Vector2(224, 483)
+texture = ExtResource("3_gxecb")
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer"]
-offset_left = 143.0
-offset_top = 342.0
-offset_right = 307.0
-offset_bottom = 400.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_42rln")
-texture_hover = SubResource("CanvasTexture_yxpva")
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1388.0
+offset_top = 495.0
+offset_right = 1676.0
+offset_bottom = 544.0
+texture_normal = ExtResource("4_see5d")
+stretch_mode = 0
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer"]
-offset_left = 134.0
-offset_top = 441.0
-offset_right = 241.0
-offset_bottom = 499.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_42rln")
-texture_hover = SubResource("CanvasTexture_yxpva")
+[node name="Options" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 592.0
+offset_right = 1679.0
+offset_bottom = 653.0
+texture_normal = ExtResource("5_t5vlv")
+stretch_mode = 0
 
-[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1387.0
+offset_top = 680.0
+offset_right = 1675.0
+offset_bottom = 729.0
+texture_normal = ExtResource("6_fd3tg")
+stretch_mode = 0
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
