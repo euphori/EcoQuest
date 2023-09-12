@@ -38,13 +38,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-
+	
 	
 	if Input.is_action_just_pressed("attack") and active and !attacking:
 		if $AnimationPlayer.has_animation("attack"):
 			$AnimationPlayer.play("attack")
-			await $AnimationPlayer.animation_finished
-
+			attacking = true
+			can_move = false
 		
 
 
