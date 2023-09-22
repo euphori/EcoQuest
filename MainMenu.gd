@@ -4,8 +4,11 @@ extends Control
 @onready var options = $CanvasLayer/Options
 @onready var quit = $CanvasLayer/Quit
 @export var path_to_player : NodePath
+@export var path_to_camera : NodePath
+
 
 @onready var player = get_node(path_to_player)
+@onready var menu_camera = get_node(path_to_camera)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,6 +25,7 @@ func _input(event):
 
 
 func _on_start_pressed():
+	menu_camera.queue_free()
 	self.visible = false
 
 

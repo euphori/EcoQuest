@@ -3,7 +3,7 @@
 [resource]
 resource_name = "Orange.3"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.819608, 0.603922, 0.333333, 1)
+albedo_color = Color(0.709804, 0.505882, 0.113725, 1)
 metallic = 0.15
 metallic_specular = 0.1
 roughness = 0.62
